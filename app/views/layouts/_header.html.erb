@@ -1,0 +1,38 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+ <div class="container-fluid">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Transformator", root_path, id: "logo", class:'navbar-brand' %>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <nav>
+      <ul class="nav navbar-nav">
+        <li class=<%= active?(latest_path) %> ><%= link_to "Последние", latest_path %></li>
+        <li class=<%= active?(new_task_path) %> ><%= link_to "Отправить", new_task_path  %></li>
+        <li class=<%= active?(about_path) %> ><%= link_to "О нас", about_path %></li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><%= link_to "Пользователи", users_path if current_user.admin? %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.email %> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Мои заказы", tasks_path %></li>
+                <li><%#= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Войти", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+ </div>
+</header>

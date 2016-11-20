@@ -1,0 +1,11 @@
+= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f|
+  .row
+    .col-md-6
+      = f.input :email, label: "Ваш email"
+      = error_span(@user[:email])
+      = f.input :password
+      = f.input :password_confirmation
+      = f.select :role, ["admin", "webmaster"], label: "Роль"
+
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn btn-default'

@@ -1,0 +1,12 @@
+= simple_form_for @task, :html => { :class => 'form-horizontal' } do |f|
+  .row
+    .col-md-6
+      .image-drop
+        = f.input :style, as: :file
+    .col-md-6
+      .image-drop
+        = f.input :order, as: :file
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :rate, value: current_user.admin? ? 1 : 50
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), tasks_path, :class => 'btn btn-default'

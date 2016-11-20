@@ -1,0 +1,23 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: postgresql0.locum.ru
+  database: nerrey_transfo27
+  username: nerrey_transfo27
+  password: o3CO1eq2qH 
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: transformator_db
+  username: max
+  password: rerfhtre
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: transformator_db
+  username: ns
+  password: 14156
