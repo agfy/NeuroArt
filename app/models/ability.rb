@@ -18,7 +18,7 @@ class Ability
       # can :manage, SubAccount, :user_id => user.id
     else
       #TODO Guest have to read root page (unless redirect loop)
-      can :read, :all
+      #can :read, :all
     end
   end
 end
