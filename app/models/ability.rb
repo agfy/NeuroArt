@@ -16,7 +16,7 @@ class Ability
       #   can :manage, Statistic, :user_id => user.id
       # end
       # can :manage, SubAccount, :user_id => user.id
-    else
+    #else
       #TODO Guest have to read root page (unless redirect loop)
       #can :read, :all
     end
